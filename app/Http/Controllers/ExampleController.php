@@ -41,7 +41,7 @@ class ExampleController extends Controller
         
     }
 
-    function SessionForget(Request $request){ // to clear/delete spacific data
+    function SessionForget(Request $request){ // to clear/delete spacific one data
         
         $request->session()->forget('userEmail');
         return true;
