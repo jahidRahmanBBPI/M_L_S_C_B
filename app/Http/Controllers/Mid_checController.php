@@ -17,4 +17,16 @@ class Mid_checController extends Controller
     function DemoAction2(){
         return "hello 2";
     }
+
+    function DemoAction3(){
+        return "hello 3";
+    }
+
+    function DemoAction4(){
+        return "hello 4";
+    }
+
+    function manupulate_request_header(Request $request){
+        return $request->header();
+    }
 }

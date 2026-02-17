@@ -21,6 +21,25 @@ Route::get('/SessionFlush', [ExampleController::class,'SessionFlush']);
 // middleware
 Route::get('/hello', [Mid_checController::class,'mid'])->middleware([DemoMiddleware::class]);
 
-Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1'])->middleware([DemoMiddleware::class]);
-Route::get('/hello2', [Mid_checController::class,'DemoAction2']);
+// redirect.
+// Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1'])->middleware([DemoMiddleware::class]);
+// Route::get('/hello2', [Mid_checController::class,'DemoAction2']);
 
+
+// Apply For Route & Route group
+
+// Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1'])->middleware([DemoMiddleware::class]);
+// Route::get('/hello2/{key}', [Mid_checController::class,'DemoAction2'])->middleware([DemoMiddleware::class]);
+// Route::get('/hello3/{key}', [Mid_checController::class,'DemoAction3'])->middleware([DemoMiddleware::class]);
+// Route::get('/hello4/{key}', [Mid_checController::class,'DemoAction4'])->middleware([DemoMiddleware::class]);
+
+// Route::middleware(['demo'])->group(function(){
+//     Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1']);
+//     Route::get('/hello2/{key}', [Mid_checController::class,'DemoAction2']);
+//     Route::get('/hello3/{key}', [Mid_checController::class,'DemoAction3']);
+//     Route::get('/hello4/{key}', [Mid_checController::class,'DemoAction4']);
+// });
+
+
+//
+Route::get('/manupulate_request_header', [Mid_checController::class,'manupulate_request_header'])->middleware(DemoMiddleware::class);

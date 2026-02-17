@@ -23,11 +23,27 @@ class DemoMiddleware
         //     return response()->json('unauthorized', 200);
         // }
 
-        $key = $request->key;
-        if($key == "Jahid"){
-            return $next($request);
-        }else{
-            return redirect("/hello2");
-        }
+        // Redirect
+        // $key = $request->key;
+        // if($key == "Jahid"){
+        //     return $next($request);
+        // }else{
+        //     return redirect("/hello2");
+        // }
+
+        //Group
+        // $key = $request->key;
+        // if($key == "Jahid"){
+        //     return $next($request);
+        // }else{
+        //     return response()->json('invalid', 401);
+        // }
+
+        // 25 [Middleware] Manupulate Request Header
+        // $request->headers->add(["email"=>"jahid@aad.com"]); // when not exist email in header.
+        // $request->headers->replace(["email"=>"rahmanjahid645@gmail.com"]); // if exist email in header then replace
+
+        // $request->headers->remove("email"); // To remove header email.
+        return $next($request);
     }
 }
