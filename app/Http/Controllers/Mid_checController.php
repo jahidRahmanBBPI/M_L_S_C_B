@@ -29,4 +29,8 @@ class Mid_checController extends Controller
     function manupulate_request_header(Request $request){
         return $request->header();
     }
+
+    function rate_limit(){
+        return "hello";
+    }
 }

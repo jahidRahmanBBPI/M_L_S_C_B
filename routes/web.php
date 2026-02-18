@@ -43,3 +43,6 @@ Route::get('/hello', [Mid_checController::class,'mid'])->middleware([DemoMiddlew
 
 //
 Route::get('/manupulate_request_header', [Mid_checController::class,'manupulate_request_header'])->middleware(DemoMiddleware::class);
+
+// Request Rate Limiting.
+Route::get('/rate_limit', [Mid_checController::class,'rate_limit'])->middleware('throttle:6,1');

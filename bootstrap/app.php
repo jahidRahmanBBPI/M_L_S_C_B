@@ -4,6 +4,7 @@ use App\Http\Middleware\DemoMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Routing\Middleware\ThrottleRequests;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -17,7 +18,8 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         $middleware->append(DemoMiddleware::class); // append means apply mid whole app.
-
+        
+        // $middleware->append(ThrottleRequests::class.':60,1'); // ১ মিনিটে ৬০ বার request allowed
 
 
         // This is demo exam to apply mid in whole appl
@@ -31,6 +33,8 @@ return Application::configure(basePath: dirname(__DIR__))
     //     LogMiddleware::class,
     //     AuthMiddleware::class,
     // ]);
+
+    // $middleware->append('throttle:global-limit');  // This is for the whole app check AppServiceProvider.
 
     }) 
     ->withExceptions(function (Exceptions $exceptions): void {
