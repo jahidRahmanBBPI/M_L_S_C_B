@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\Mid_checController;
+use App\Http\Controllers\singleActionController;
 use App\Http\Middleware\DemoMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,12 @@ Route::get('/manupulate_request_header', [Mid_checController::class,'manupulate_
 
 // Request Rate Limiting.
 Route::get('/rate_limit', [Mid_checController::class,'rate_limit'])->middleware('throttle:6,1');
+
+//Controller
+// Single Action Controller.
+// 28 [Controller] Single Action Controller
+
+
+// single action controller
+Route::get('/single_action_controller',singleActionController::class);
+29 [Controller] Resource Controller
