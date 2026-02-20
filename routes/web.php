@@ -1,10 +1,12 @@
 <?php
 
-
+use App\Http\Controllers\DemoController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\Mid_checController;
+use App\Http\Controllers\resourceController;
 use App\Http\Controllers\singleActionController;
 use App\Http\Middleware\DemoMiddleware;
+use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,7 +22,7 @@ Route::get('/SessionForget', [ExampleController::class,'SessionForget']);
 Route::get('/SessionFlush', [ExampleController::class,'SessionFlush']);
 
 // middleware
-Route::get('/hello', [Mid_checController::class,'mid'])->middleware([DemoMiddleware::class]);
+// Route::get('/hello', [Mid_checController::class,'mid'])->middleware([DemoMiddleware::class]);
 
 // redirect.
 // Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1'])->middleware([DemoMiddleware::class]);
@@ -43,10 +45,10 @@ Route::get('/hello', [Mid_checController::class,'mid'])->middleware([DemoMiddlew
 
 
 //
-Route::get('/manupulate_request_header', [Mid_checController::class,'manupulate_request_header'])->middleware(DemoMiddleware::class);
+// Route::get('/manupulate_request_header', [Mid_checController::class,'manupulate_request_header'])->middleware(DemoMiddleware::class);
 
 // Request Rate Limiting.
-Route::get('/rate_limit', [Mid_checController::class,'rate_limit'])->middleware('throttle:6,1');
+// Route::get('/rate_limit', [Mid_checController::class,'rate_limit'])->middleware('throttle:6,1');
 
 //Controller
 // Single Action Controller.
@@ -54,5 +56,12 @@ Route::get('/rate_limit', [Mid_checController::class,'rate_limit'])->middleware(
 
 
 // single action controller
-Route::get('/single_action_controller',singleActionController::class);
-29 [Controller] Resource Controller
+// php artisan make:controller singleActionController --invokable
+// Route::get('/single_action_controller',singleActionController::class);
+
+// Resource controller
+// php artisan make:controller resourceController --resource
+// Route::resource('resource', resourceController::class)->withoutMiddleware(ValidateCsrfToken::class);
+
+
+Route::get('/hello/{key}', [DemoController::class,'DemoAction']);

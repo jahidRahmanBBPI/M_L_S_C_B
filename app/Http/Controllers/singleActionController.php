@@ -11,7 +11,7 @@ class singleActionController extends Controller
      */
     public function __invoke(Request $request)
     {
-        // php artisan make:controller singleActionController --invokable   
+           
         return "I am single action controller";
     }
 }

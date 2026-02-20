@@ -43,7 +43,7 @@ class DemoMiddleware
         // $request->headers->add(["email"=>"jahid@aad.com"]); // when not exist email in header.
         // $request->headers->replace(["email"=>"rahmanjahid645@gmail.com"]); // if exist email in header then replace
 
-        // $request->headers->remove("email"); // To remove header email.
+        $request->headers->remove("email"); // To remove header email.
         return $next($request);
     }
 }
