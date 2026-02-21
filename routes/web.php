@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Mid_checController;
 use App\Http\Controllers\resourceController;
 use App\Http\Controllers\singleActionController;
@@ -65,3 +66,7 @@ Route::get('/SessionFlush', [ExampleController::class,'SessionFlush']);
 
 
 Route::get('/hello/{key}', [DemoController::class,'DemoAction']);
+
+// Blade.
+// Route::get('/home/{num1?}/{num2?}', [HomeController::class,'page']);
+Route::get('/for_loop', [HomeController::class,'for_loop']);
