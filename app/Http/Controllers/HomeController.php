@@ -16,8 +16,23 @@ class HomeController extends Controller
     //     return view('Home', $data);
     // }
 
+    // For Loop
     function for_loop(){
         return view('Home');
+        
+    }
+
+    // Foreach loop
+    function foreach(){
+        $data = [
+            ['name'=>'Ashik vai', 'city'=>'Pabna'],
+            ['name'=>'Emon vai', 'city'=>'Khulna'],
+            ['name'=>'Raza vai', 'city'=>'Maymansing'],
+            ['name'=>'Jahid', 'city'=>'Brahmanbaria'],
+        ];
+        return view('Home',[
+            'users'=> $data,
+        ]);
     }
 }
 // 35

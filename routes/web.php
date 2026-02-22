@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BootstrapController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\HomeController;
@@ -65,8 +66,11 @@ Route::get('/SessionFlush', [ExampleController::class,'SessionFlush']);
 // Route::resource('resource', resourceController::class)->withoutMiddleware(ValidateCsrfToken::class);
 
 
-Route::get('/hello/{key}', [DemoController::class,'DemoAction']);
+// Route::get('/hello/{key}', [DemoController::class,'DemoAction']);
 
 // Blade.
 // Route::get('/home/{num1?}/{num2?}', [HomeController::class,'page']);
-Route::get('/for_loop', [HomeController::class,'for_loop']);
+Route::get('/for_loop',[HomeController::class,'for_loop']);
+Route::get('/foreach_loop',[HomeController::class,'foreach']);
+
+Route::get('/bootstrap',[BootstrapController::class,'bootstrap']);
