@@ -74,3 +74,7 @@ Route::get('/for_loop',[HomeController::class,'for_loop']);
 Route::get('/foreach_loop',[HomeController::class,'foreach']);
 
 Route::get('/bootstrap',[BootstrapController::class,'bootstrap']);
+
+Route::get('/home', [HomeController::class,'home']);
+
+// 41 [Blade] Laravel One Page Templete Project

@@ -34,5 +34,9 @@ class HomeController extends Controller
             'users'=> $data,
         ]);
     }
+
+    function home(){
+        return view('layout.home');
+    }
 }
 // 35
