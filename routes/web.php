@@ -3,6 +3,7 @@
 use App\Http\Controllers\BootstrapController;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\GreetingsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Mid_checController;
 use App\Http\Controllers\resourceController;
@@ -38,7 +39,8 @@ Route::get('/SessionFlush', [ExampleController::class,'SessionFlush']);
 // Route::get('/hello3/{key}', [Mid_checController::class,'DemoAction3'])->middleware([DemoMiddleware::class]);
 // Route::get('/hello4/{key}', [Mid_checController::class,'DemoAction4'])->middleware([DemoMiddleware::class]);
 
-// Route::middleware(['demo'])->group(function(){
+// Middleware Group.
+// Route::middleware(['demo','throttle:2,1'])->group(function(){
 //     Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1']);
 //     Route::get('/hello2/{key}', [Mid_checController::class,'DemoAction2']);
 //     Route::get('/hello3/{key}', [Mid_checController::class,'DemoAction3']);
@@ -77,4 +79,13 @@ Route::get('/bootstrap',[BootstrapController::class,'bootstrap']);
 
 Route::get('/home', [HomeController::class,'home']);
 
-// 41 [Blade] Laravel One Page Templete Project
+// hasin vai
+// Request Block;
+Route::get('/request_block',[DemoController::class,'request_block'])->middleware(DemoMiddleware::class);
+
+Route::middleware(['addtitle','simple_response'])->group(function(){
+    Route::get('/hello',[GreetingsController::class,'hello']);
+    Route::get('/hi',[GreetingsController::class,'hi']);
+});
+
+Route::get('/name/{name?}',[GreetingsController::class,'greet'])->middleware(['addtitle']);  //http://127.0.0.1:8000/name/jahid?display=email&title=Mr

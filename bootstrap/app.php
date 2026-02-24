@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Middleware\AddTitleMiddleware;
 use App\Http\Middleware\DemoMiddleware;
+use App\Http\Middleware\SimpleResponseMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -14,7 +16,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
+            'addtitle'=>AddTitleMiddleware::class,
             'demo'=> DemoMiddleware::class,
+            'simple_response'=>SimpleResponseMiddleware::class,
         ]);
 
         $middleware->append(DemoMiddleware::class); // append means apply mid whole app.
