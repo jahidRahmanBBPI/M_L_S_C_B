@@ -89,3 +89,6 @@ Route::middleware(['addtitle','simple_response'])->group(function(){
 });
 
 Route::get('/name/{name?}',[GreetingsController::class,'greet'])->middleware(['addtitle']);  //http://127.0.0.1:8000/name/jahid?display=email&title=Mr
+
+
+Route::get('/protected', [GreetingsController::class,'protectedRequest'])->middleware(['country_blocker']);

@@ -17,4 +17,9 @@ class GreetingsController extends Controller
     function greet(Request $request, $name){
         print_r($request->all());
     }
+
+    function protectedRequest(Request $request){
+        $ip = $request->ip();   
+        return response("Protected Response {$ip}");
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\AddTitleMiddleware;
+use App\Http\Middleware\CountryBlockerMiddleware;
 use App\Http\Middleware\DemoMiddleware;
 use App\Http\Middleware\SimpleResponseMiddleware;
 use Illuminate\Foundation\Application;
@@ -19,6 +20,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'addtitle'=>AddTitleMiddleware::class,
             'demo'=> DemoMiddleware::class,
             'simple_response'=>SimpleResponseMiddleware::class,
+            'country_blocker'=>CountryBlockerMiddleware::class,
         ]);
 
         $middleware->append(DemoMiddleware::class); // append means apply mid whole app.
