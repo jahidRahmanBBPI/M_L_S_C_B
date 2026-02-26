@@ -4,10 +4,11 @@ use App\Http\Middleware\AddTitleMiddleware;
 use App\Http\Middleware\CountryBlockerMiddleware;
 use App\Http\Middleware\DemoMiddleware;
 use App\Http\Middleware\SimpleResponseMiddleware;
+use App\Http\Middleware\TestMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Routing\Middleware\ThrottleRequests;
+// use Illuminate\Routing\Middleware\ThrottleRequests;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -21,6 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'demo'=> DemoMiddleware::class,
             'simple_response'=>SimpleResponseMiddleware::class,
             'country_blocker'=>CountryBlockerMiddleware::class,
+            'test'=>TestMiddleware::class,
         ]);
 
         $middleware->append(DemoMiddleware::class); // append means apply mid whole app.
