@@ -100,7 +100,12 @@ Route::get('/protected', [GreetingsController::class,'protectedRequest'])->middl
 // Route::get('/store', [TestController::class,'store'])->middleware('test');
 
 // Middleware for group route.
-Route::middleware(['test'])->group(function(){
-    Route::get('/index', [TestController::class,'index']);
-    Route::get('/store', [TestController::class,'store']);
-});
+// Route::middleware(['test'])->group(function(){
+//     Route::get('/index', [TestController::class,'index']);
+//     Route::get('/store', [TestController::class,'store']);
+// });
+
+// Middleware for all functions in a controller.
+
+Route::get('/index', [TestController::class,'index']);
+Route::get('/store', [TestController::class,'store']);
