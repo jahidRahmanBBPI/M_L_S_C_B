@@ -16,9 +16,17 @@ class TestMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         // echo "Test Middleware". '<br>';
-        if($request->path() == 'index'){
-            return redirect('/store');
+
+        // Request redirection.
+        // if($request->path() == 'index'){
+        //     return redirect('/store');
+        // }
+        // return $next($request);
+
+        $token = $request->header("token");
+        if($token == 123){
+            return $next($request);
         }
-        return $next($request);
+        return response()->json(['unauthorized'], 401);
     }
 }
