@@ -15,7 +15,10 @@ class TestMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        echo "Test Middleware". '<br>';
+        // echo "Test Middleware". '<br>';
+        if($request->path() == 'index'){
+            return redirect('/store');
+        }
         return $next($request);
     }
 }

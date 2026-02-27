@@ -107,5 +107,10 @@ Route::get('/protected', [GreetingsController::class,'protectedRequest'])->middl
 
 // Middleware for all functions in a controller.
 
-Route::get('/index', [TestController::class,'index']);
+// Route::get('/index', [TestController::class,'index']);
+// Route::get('/store', [TestController::class,'store']);
+
+// Request Verification & redirect via Middleware.
+Route::get('/index', [TestController::class,'index'])->middleware('test');
 Route::get('/store', [TestController::class,'store']);
+Route::get('/show', [TestController::class,'show']);
