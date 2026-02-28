@@ -15,6 +15,7 @@ class DemoController extends Controller
     }
 
     function DemoAction(Request $request){
+        return $request->headers;
         return "hello";
     }
 }

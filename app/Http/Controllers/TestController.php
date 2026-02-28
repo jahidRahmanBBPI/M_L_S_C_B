@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 // use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -10,8 +12,10 @@ class TestController extends Controller
     //     $this->middleware("test")->except('store');
     //     $this->middleware("test")->only('store');
     // }
-    function index(){
-        return "From Index Method";
+    function index(Request $request){
+        return $request->headers;
+        // return "From Index Method";
+        // return $request->headers();
     }
 
     function store(){

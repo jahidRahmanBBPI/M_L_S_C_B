@@ -10,6 +10,7 @@ use App\Http\Controllers\resourceController;
 use App\Http\Controllers\singleActionController;
 use App\Http\Controllers\TestController;
 use App\Http\Middleware\DemoMiddleware;
+use GuzzleHttp\Middleware;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Support\Facades\Route;
 
@@ -114,3 +115,4 @@ Route::get('/protected', [GreetingsController::class,'protectedRequest'])->middl
 Route::get('/index', [TestController::class,'index'])->middleware('test');
 Route::get('/store', [TestController::class,'store']);
 Route::get('/show', [TestController::class,'show']);
+Route::get('/get', [DemoController::class,'DemoAction'])->Middleware('demo');

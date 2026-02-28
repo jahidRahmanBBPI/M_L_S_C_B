@@ -22,11 +22,16 @@ class TestMiddleware
         //     return redirect('/store');
         // }
         // return $next($request);
+// =====================================================================
+        // $token = $request->header("token");
+        // if($token == 123){
+        //     return $next($request);
+        // }
+        // return response()->json(['unauthorized'], 401);
 
-        $token = $request->header("token");
-        if($token == 123){
-            return $next($request);
-        }
-        return response()->json(['unauthorized'], 401);
+
+        $request->headers->add(["access-token" => "1234"]);
+        // $request->headers->add(["email"=>"jahid@aad.com"]);
+        return $next($request);
     }
 }
