@@ -25,7 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'test'=>TestMiddleware::class,
         ]);
 
-        $middleware->append(DemoMiddleware::class); // append means apply mid whole app.
+        $middleware->append(DemoMiddleware::class); // append means apply middleware whole app.
         
         // $middleware->append(ThrottleRequests::class.':60,1'); // ১ মিনিটে ৬০ বার request allowed
 

@@ -42,7 +42,7 @@ Route::get('/SessionFlush', [ExampleController::class,'SessionFlush']);
 // Route::get('/hello4/{key}', [Mid_checController::class,'DemoAction4'])->middleware([DemoMiddleware::class]);
 
 // Middleware Group.
-// Route::middleware(['demo','throttle:2,1'])->group(function(){
+// Route::prefix('demo')->middleware(['demo','throttle:2,1'])->group(function(){
 //     Route::get('/hello1/{key}', [Mid_checController::class,'DemoAction1']);
 //     Route::get('/hello2/{key}', [Mid_checController::class,'DemoAction2']);
 //     Route::get('/hello3/{key}', [Mid_checController::class,'DemoAction3']);
