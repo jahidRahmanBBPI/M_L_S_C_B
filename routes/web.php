@@ -6,6 +6,7 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\GreetingsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Mid_checController;
+use App\Http\Controllers\rabbileController;
 use App\Http\Controllers\resourceController;
 use App\Http\Controllers\singleActionController;
 use App\Http\Controllers\TestController;
@@ -116,3 +117,7 @@ Route::get('/index', [TestController::class,'index'])->middleware('test');
 Route::get('/store', [TestController::class,'store']);
 Route::get('/show', [TestController::class,'show']);
 Route::get('/get', [DemoController::class,'DemoAction'])->Middleware('demo');
+
+
+// Rabbil Vai
+Route::get('/home', [rabbileController::class,'home']);
