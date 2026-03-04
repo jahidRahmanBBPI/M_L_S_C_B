@@ -80,7 +80,7 @@ Route::get('/foreach_loop',[HomeController::class,'foreach']);
 
 Route::get('/bootstrap',[BootstrapController::class,'bootstrap']);
 
-Route::get('/home', [HomeController::class,'home']);
+// Route::get('/home', [HomeController::class,'home']);
 
 // hasin vai
 // Request Block;
@@ -120,4 +120,4 @@ Route::get('/get', [DemoController::class,'DemoAction'])->Middleware('demo');
 
 
 // Rabbil Vai
-Route::get('/home', [rabbileController::class,'home']);
+Route::get('/rabbil/home', [rabbileController::class,'home_practice']);

@@ -3,3 +3,4 @@
 @yield('content');
 
 @include('layout.footer');
+{{-- 48 --}}
