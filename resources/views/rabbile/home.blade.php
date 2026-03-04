@@ -10,10 +10,25 @@
 <body>
     {{-- <button class="btn btn-success">button</button>
     <a href="{{ url('ostad.app') }}"></a> --}}
-    @if ($mark_value > 80)
+    {{-- @if ($mark_value > 80)
         <h1>A+ Yes</h1>
     @else
         <h1>Not</h1>
-    @endif
+    @endif --}}
+
+    @switch($mark_value)
+        @case(90)
+            <h1>Marks 90</h1>
+            @break
+        @case(80)
+            <h1>Marks 80</h1>
+            @break
+        @case(70)
+            <h1>Marks 70</h1>
+            @break
+        @default
+            <h1>Unknown number</h1>
+            
+    @endswitch
 </body>
 </html>
