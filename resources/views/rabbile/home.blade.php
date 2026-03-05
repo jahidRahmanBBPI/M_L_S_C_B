@@ -16,7 +16,7 @@
         <h1>Not</h1>
     @endif --}}
 
-    @switch($mark_value)
+    {{-- @switch($mark_value)
         @case(90)
             <h1>Marks 90</h1>
             @break
@@ -29,6 +29,14 @@
         @default
             <h1>Unknown number</h1>
             
-    @endswitch
+    @endswitch --}}
+
+    <ol>
+        @foreach($list as $item)
+        <li>Name: {{ $item['name'] }} City:{{ $item['city'] }} Age: {{ $item['age'] }}</li>
+        @endforeach
+    </ol>
+
+
 </body>
 </html>
