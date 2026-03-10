@@ -31,11 +31,24 @@
             
     @endswitch --}}
 
-    <ol>
+    {{-- <ol>
         @foreach($list as $item)
         <li>Name: {{ $item['name'] }} City:{{ $item['city'] }} Age: {{ $item['age'] }}</li>
         @endforeach
-    </ol>
+    </ol> --}}
+
+    @extends('layout.app')
+    @section('content')
+        <button onclick="f()">button</button>
+    @endsection
+
+    <script>
+        function f(){
+            alert('name')
+        }
+    </script>
+
+    
 
 
 </body>
